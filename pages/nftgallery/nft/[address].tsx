@@ -30,16 +30,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const address = params?.address as string;
-  const response = await fetch(`${NFT_ENDPOINT}${address}`);
-  const data = (await response.json()) as NftPageProps;
-
-  return {
-    props: { data },
-  };
-};
-
 export function NftPage({ data }: NftPageProps) {
   const router = useRouter();
 
