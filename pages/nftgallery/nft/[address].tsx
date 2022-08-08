@@ -1,9 +1,9 @@
 
 import PageLayout from 'components/layouts/pageLayout'
 import { Box, Flex, Heading, Image, Modal, ModalContent, ModalOverlay, Stack, Text } from "@chakra-ui/react";
-import { NFT_ENDPOINT, RAINBOW_ENDPOINT} from "../../../constants/endpoints"
+import { RAINBOW_ENDPOINT} from "../../../constants/endpoints"
 import { Cancel } from "iconoir-react";
-import type { GetStaticPaths, GetStaticProps } from "next";
+import type { GetStaticPaths} from "next";
 import { useRouter } from "next/router";
 import React from "react";
 import type { Nft } from "../../../types/nft";
@@ -30,16 +30,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths,
     fallback: false,
-  };
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const address = params?.address as string;
-  const response = await fetch(`${NFT_ENDPOINT}${address}`);
-  const data = (await response.json()) as NftPageProps;
-
-  return {
-    props: { data },
   };
 };
 
