@@ -22,8 +22,7 @@ import { ColorModeSwitcher } from '../theme/ColorModeSwitcher';
 import { AiTwotoneThunderbolt } from 'react-icons/ai';
 import { BiChevronDown } from 'react-icons/bi';
 import { CgArrowsExchange } from 'react-icons/cg';
-import { BsCheckCircle } from 'react-icons/bs';
-import { BsHouseDoor } from 'react-icons/bs';
+import { BsShopWindow } from 'react-icons/bs';
 import { MdTimeline } from 'react-icons/md';
 import { BsBook } from 'react-icons/bs';
 import NextLink from 'next/link';
@@ -46,8 +45,8 @@ const mobileLinks = [
 
 const dropdownLinks = [
   { name: 'Projects', path: '/projects' },
-  { name: 'Tech Stack', path: '/tech-stack' },
   { name: 'Repos', path: '/repos' },
+  { name: 'Tech Stack', path: '/tech-stack' },
   { name: 'NFT Gallery', path: '/nftgallery' },
   { name: 'Changelog', path: '/changelog' }
   // { name: "Developer Story", path: "/developer-story" }
@@ -101,11 +100,10 @@ interface MenuLinkProps {
 
 const MenuLink = (props: MenuLinkProps) => {
   const iconsObj = {
-    '/tech-stack': <Icon as={AiTwotoneThunderbolt} size={18} color={props.color} />,
-    '/repos': <Icon as={BsBook} size={18} color={props.color} />,
-    '/achievements': <Icon as={BsCheckCircle} size={18} color={props.color} />,
-    '/nftgallery': <Icon as={BsHouseDoor} size={18} color={props.color} />,
     '/projects': <Icon as={MdTimeline} size={18} color={props.color} />,
+    '/repos': <Icon as={BsBook} size={18} color={props.color} />,
+    '/tech-stack': <Icon as={AiTwotoneThunderbolt} size={18} color={props.color} />,
+    '/nftgallery': <Icon as={BsShopWindow} size={18} color={props.color} />,
     '/changelog': <Icon as={CgArrowsExchange} size={18} color={props.color} />
   };
 
@@ -204,7 +202,7 @@ export default function TopNav() {
                       _hover={{ color: linkColor, bg: menuProps.bg }}
                       _active={{ bg: menuProps.bg }}
                     >
-                      Links
+                      Other
                       <Icon
                         as={BiChevronDown}
                         h={5}
