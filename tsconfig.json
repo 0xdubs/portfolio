@@ -20,7 +20,6 @@
       "lib/*": ["lib/*"],
       "data/*": ["data/*"],
       "pages/*": ["pages/*"],
-      "posts/*": ["posts/*"],
       "config/*": ["config/*"],
       "interfaces/*": ["interfaces/*"],
       "public/*": ["public/*"],

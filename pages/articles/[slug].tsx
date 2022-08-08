@@ -196,7 +196,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }));
 
   return {
-    paths: [...devtoPaths, ...localPaths],
+    paths: [...devtoPaths],
     fallback: true
   };
 };
@@ -219,29 +219,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const res = await fetch(`https://dev.to/api/articles/${selectedBlog[0]?.id}`);
     blogObj = await res.json();
     remarkContent = await markdownToHtml(blogObj.body_markdown);
-  } else {
-    const markdownWithMeta = fs.readFileSync(
-      path.join(root, 'data', 'posts', `${params?.slug}.mdx`),
-      'utf-8'
-    );
-    const { data: frontmatter, content } = matter(markdownWithMeta);
-    const devtoPost = devData.filter(
-      (data) =>
-        !data.canonical_url.includes('dev.to') &&
-        data.canonical_url.split('/articles/')[1] === params?.slug
-    )[0];
-    if (devtoPost) {
-      frontmatter['comments_count'] = devtoPost?.comments_count;
-      frontmatter['public_reactions_count'] = devtoPost?.public_reactions_count;
-      frontmatter['url'] = devtoPost?.url;
-    }
-    blogObj = frontmatter;
-
-    // If slug not existed in blogObj
-    if (params?.slug) {
-      blogObj.slug = params?.slug;
-    }
-    remarkContent = await markdownToHtml(content);
   }
 
   if (!devData) {
