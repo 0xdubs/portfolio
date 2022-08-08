@@ -31,23 +31,25 @@ import { useLinkColor } from 'components/theme';
 import { MotionBox } from 'components/shared/animations/motion';
 
 const webLinks = [
-  { name: 'About', path: '/about' },
-  { name: 'Articles', path: '/articles' }
+  { name: 'Projects', path: '/projects' },
+  { name: 'Posts', path: '/articles' },
+  { name: 'About Me', path: '/about' },
 ];
 
 const mobileLinks = [
   { name: 'Projects', path: '/projects' },
   { name: 'Repos', path: '/repos' },
-  { name: 'Articles', path: '/articles' },
+  { name: 'Posts', path: '/articles' },
+  { name: 'Guestbook', path: '/guestbook' },
   { name: 'NFT Gallery', path: '/nftgallery' },
   { name: 'Changelog', path: '/changelog' }
 ];
 
 const dropdownLinks = [
-  { name: 'Projects', path: '/projects' },
   { name: 'Repos', path: '/repos' },
   { name: 'Tech Stack', path: '/tech-stack' },
   { name: 'NFT Gallery', path: '/nftgallery' },
+  { name: 'Guestbook', path: '/guestbook' },
   { name: 'Changelog', path: '/changelog' }
   // { name: "Developer Story", path: "/developer-story" }
 ];

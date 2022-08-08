@@ -12,7 +12,7 @@ interface GalleryImage {
 export function GalleryImage({ address, tokenId, name, imageUrl }: GalleryImage) {
   return (
     <Box>
-      <Link as={`/nft/${address}_${tokenId}`} href="/nft/[address]" passHref>
+      <a href={`https://opensea.io/assets/ethereum/${address}/${tokenId}`} target="_blank" rel="noopener noreferrer">
         <Box
           _hover={{
             transform: "scale(1.05)",
@@ -37,7 +37,7 @@ export function GalleryImage({ address, tokenId, name, imageUrl }: GalleryImage)
             w="full"
           />
         </Box>
-      </Link>
+        </a>
       <Text color="gray.400" fontSize="sm" fontWeight="bold" pl={2} pt={1}>
         {name ?? tokenId}
       </Text>

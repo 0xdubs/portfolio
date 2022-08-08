@@ -1,9 +1,7 @@
-
-import PageLayout from 'components/layouts/pageLayout'
 import { Box, Flex, Heading, Image, Modal, ModalContent, ModalOverlay, Stack, Text } from "@chakra-ui/react";
-import { RAINBOW_ENDPOINT} from "../../../constants/endpoints"
+import { NFT_ENDPOINT, RAINBOW_ENDPOINT } from "../../../constants/endpoints";
 import { Cancel } from "iconoir-react";
-import type { GetStaticPaths} from "next";
+import type { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import React from "react";
 import type { Nft } from "../../../types/nft";
@@ -19,7 +17,6 @@ export interface NftPageProps {
 export const getStaticPaths: GetStaticPaths = async () => {
   const response = await fetch(RAINBOW_ENDPOINT);
   const json = (await response.json()) as Rainbow;
-  console.log("rainbow json",json)
 
   const paths = json.results.map((rainbow) => {
     return {
@@ -33,8 +30,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export function Index({ data }: NftPageProps) {
+export function NftPage({ data }: NftPageProps) {
   const router = useRouter();
 
   const handleClick = () => {
@@ -42,7 +38,6 @@ export function Index({ data }: NftPageProps) {
   };
 
   return (
-    <PageLayout title="NFT Gallery" keywords="My NFT Gallery">
     <Modal isCentered isOpen onClose={handleClick}>
       <ModalOverlay zIndex={1} />
       <Box
@@ -99,8 +94,7 @@ export function Index({ data }: NftPageProps) {
         </Stack>
       </ModalContent>
     </Modal>
-    </PageLayout>
   );
 }
 
-export default Index;
+export default NftPage;
