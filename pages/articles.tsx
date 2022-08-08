@@ -111,43 +111,10 @@ const root = process.cwd()
 export const getServerSideProps: GetServerSideProps = async () => {
   let devtoPosts = await getDevtoPosts()
 
-  const paths = fs
-    .readdirSync(path.join(root, 'data', 'posts'))
-    .map((p) => p.replace(/\.mdx/, ''))
-  const localPosts = []
-  paths.map((p) => {
-    const markdownWithMeta = fs.readFileSync(
-      path.join(root, 'data', 'posts', `${p}.mdx`),
-      'utf-8'
-    )
-    const { data: frontmatter } = matter(markdownWithMeta)
-    const devPost = devtoPosts.filter(
-      (data) =>
-        !data.canonical_url.includes('dev.to') &&
-        data.canonical_url.split('/articles/')[1] === p
-    )[0]
-
-    localPosts.push({
-      slug: p,
-      title: frontmatter.title,
-      description: frontmatter.description,
-      published_at: frontmatter.published_at,
-      comments_count:
-        (frontmatter.comments_count
-          ? frontmatter.comments_count
-          : devPost?.comments_count) || 0,
-      public_reactions_count:
-        (frontmatter.public_reactions_count
-          ? frontmatter.public_reactions_count
-          : devPost?.public_reactions_count) || 0,
-      tag_list: frontmatter.tags,
-    })
-  })
-
   devtoPosts = devtoPosts.filter((data) =>
     data.canonical_url.includes('dev.to')
   )
-  const posts = [...localPosts, ...devtoPosts]
+  const posts = [ ...devtoPosts]
 
   if (!posts) {
     return {
