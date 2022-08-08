@@ -189,11 +189,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     params: { slug: data?.slug }
   }));
 
-  const localPaths = fs.readdirSync(path.join(root, 'data', 'posts')).map((p) => ({
-    params: {
-      slug: p.replace(/\.mdx/, '')
-    }
-  }));
 
   return {
     paths: [...devtoPaths],
