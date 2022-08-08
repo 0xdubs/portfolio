@@ -1,8 +1,5 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 import html from 'remark-html';
 import {
   Box,
@@ -30,8 +27,6 @@ import { MotionBox } from 'components/shared/animations/motion';
 import DevToCallToAction from 'components/shared/DevToCallToAction';
 import { fadeInUp, stagger } from 'components/shared/animations/page-transitions';
 import { motion } from 'framer-motion';
-import { usePostData } from 'lib/usePostData';
-import { LikeButton } from 'components/shared/LikeButton';
 import { useLinkColor } from 'components/theme';
 import { getDevtoPosts } from 'lib/fetchPosts';
 import { HeartIcon, CommentIcon, EyeIcon } from 'components/shared/icons';
@@ -47,16 +42,11 @@ export interface AllBlogProps {
 const POST_VIEW_LIMIT = 100;
 
 const ArticlePage: NextPage<AllBlogProps> = ({ articleContent, blogDetails }) => {
-  const { totalPostLikes, totalPostViews, isLoading, incrementViews } = usePostData(
-    blogDetails?.slug,
-    blogDetails?.title
-  );
   const [showLikeButton, setShowLikeButton] = useState(false);
   const borderColor = useColorModeValue('transparent', 'gray.700');
   const linkColor = useLinkColor();
 
   useEffect(() => {
-    incrementViews();
     window.addEventListener('scroll', listenToScroll);
     return () => window.removeEventListener('scroll', listenToScroll);
   }, []);
@@ -75,12 +65,6 @@ const ArticlePage: NextPage<AllBlogProps> = ({ articleContent, blogDetails }) =>
     >
       <Collapse in={showLikeButton} animateOpacity>
         <Box position="fixed" right="10%" top="50%" display={['none', 'none', 'none', 'block']}>
-          <LikeButton
-            id={blogDetails?.slug}
-            title={blogDetails?.title}
-            devToLikes={blogDetails?.public_reactions_count}
-            linkColor={linkColor}
-          />
         </Box>
       </Collapse>
       <motion.div initial="initial" animate="animate" variants={stagger}>
@@ -128,11 +112,11 @@ const ArticlePage: NextPage<AllBlogProps> = ({ articleContent, blogDetails }) =>
                 ))}
               </HStack>
               <HStack spacing={2} isInline pt={['0.5rem', '0', '0']}>
-                {blogDetails?.public_reactions_count || totalPostLikes ? (
+                {blogDetails?.public_reactions_count ? (
                   <Flex alignItems="center">
                     <DisplayText
-                      isLoading={isLoading}
-                      value={(Number(blogDetails.public_reactions_count) || 0) + totalPostLikes}
+                      isLoading={false}
+                      value={(Number(blogDetails.public_reactions_count) || 0)}
                     />
                     &nbsp;
                     <HeartIcon />
@@ -145,15 +129,6 @@ const ArticlePage: NextPage<AllBlogProps> = ({ articleContent, blogDetails }) =>
                     <DisplayText isLoading={false} value={blogDetails.comments_count} />
                     &nbsp;
                     <CommentIcon />
-                  </Flex>
-                ) : (
-                  ''
-                )}
-                {blogDetails && totalPostViews > POST_VIEW_LIMIT ? (
-                  <Flex alignItems="center">
-                    <DisplayText isLoading={isLoading} value={totalPostViews} />
-                    &nbsp;
-                    <EyeIcon />
                   </Flex>
                 ) : (
                   ''

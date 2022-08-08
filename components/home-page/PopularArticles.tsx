@@ -18,7 +18,6 @@ import { useLinkColor } from 'components/theme'
 import Header from '../shared/header'
 import { CardTransition } from 'components/shared/animations/page-transitions'
 import { MotionBox } from 'components/shared/animations/motion'
-import { getDbPosts } from 'lib/fetchPosts'
 import { CommentIcon, HeartIcon } from 'components/shared/icons'
 import DisplayText from 'components/shared/icons/DisplayText'
 
@@ -26,7 +25,6 @@ const ORANGE = '#ff9400'
 
 const PopularArticles: React.FC<BlogPostProps> = (props) => {
   const { posts } = props
-  const { dbPosts, isLoading } = getDbPosts()
   const linkColor = useLinkColor()
   const textColor = useColorModeValue('gray.500', 'gray.200')
 
@@ -44,11 +42,6 @@ const PopularArticles: React.FC<BlogPostProps> = (props) => {
       comparison = -1
     }
     return comparison
-  }
-
-  const getPostLikes = (slug) => {
-    const p = dbPosts?.filter((p) => p.slug === slug)[0]
-    return p?.likes || 0
   }
 
   return (
@@ -101,11 +94,9 @@ const PopularArticles: React.FC<BlogPostProps> = (props) => {
                           {positive_reactions_count ? (
                             <Flex alignItems="center">
                               <DisplayText
-                                isLoading={isLoading}
+                                isLoading={false}
                                 value={
-                                  Number(positive_reactions_count) +
-                                  getPostLikes(slug)
-                                }
+                                  Number(positive_reactions_count)}
                               />
                               &nbsp;
                               <HeartIcon />
@@ -144,10 +135,9 @@ const PopularArticles: React.FC<BlogPostProps> = (props) => {
                               d={['flex', 'none', 'none']}
                             >
                               <DisplayText
-                                isLoading={isLoading}
+                                isLoading={false}
                                 value={
-                                  Number(positive_reactions_count) +
-                                  getPostLikes(slug)
+                                  Number(positive_reactions_count)
                                 }
                               />
                               &nbsp;

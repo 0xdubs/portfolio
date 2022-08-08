@@ -4,7 +4,6 @@ import { ChakraProvider, Box } from '@chakra-ui/react'
 import AppLayout from 'components/layouts/appLayout'
 import { PrismGlobal } from 'components/theme/prism'
 import { useRouter } from 'next/router'
-import * as gtag from 'lib/gtag'
 import { AnimatePresence } from 'framer-motion'
 import { theme } from 'components/theme'
 import { AccentGlobal } from 'components/theme/Accent'
@@ -12,15 +11,6 @@ import { FontsGlobal } from 'components/theme/fonts'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
-  useEffect(() => {
-    const handleRouteChange = (url) => {
-      gtag.pageview(url)
-    }
-    router.events.on('routeChangeComplete', handleRouteChange)
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [router.events])
 
   return (
     <ChakraProvider theme={theme} resetCSS={true}>

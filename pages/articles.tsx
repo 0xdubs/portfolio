@@ -22,13 +22,12 @@ import matter from 'gray-matter'
 import { motion, AnimatePresence } from 'framer-motion'
 import PageLayout from 'components/layouts/pageLayout'
 import { BiSearch } from 'react-icons/bi'
-import { getDbPosts, getDevtoPosts } from 'lib/fetchPosts'
+import { getDevtoPosts } from 'lib/fetchPosts'
 
 const TURQUOISE = '#06b6d4'
 
 const Posts = ({ posts }) => {
   const [searchValue, setSearchValue] = useState('')
-  const { dbPosts, isLoading } = getDbPosts()
 
   const filteredBlogPosts = posts.filter((data) => {
     const searchContent = data.title + data.description
@@ -37,11 +36,6 @@ const Posts = ({ posts }) => {
   filteredBlogPosts?.sort(
     (a, b) => +new Date(b.published_at) - +new Date(a.published_at)
   )
-
-  const getPostLikes = (post) => {
-    const p = dbPosts?.filter((p) => p.slug === post.slug)[0]
-    return p?.likes || 0
-  }
 
   return (
     <Fragment>
@@ -91,8 +85,8 @@ const Posts = ({ posts }) => {
                     <MotionBox whileHover={{ y: -5 }} key={i}>
                       <PostCard
                         post={post}
-                        postDbLikes={getPostLikes(post)}
-                        isLoading={isLoading}
+                        isLoading={false}
+                        postDbLikes={0}
                       />
                     </MotionBox>
                   </motion.div>
