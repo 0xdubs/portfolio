@@ -23,6 +23,7 @@ import { AiTwotoneThunderbolt } from 'react-icons/ai';
 import { BiChevronDown } from 'react-icons/bi';
 import { CgArrowsExchange } from 'react-icons/cg';
 import { BsShopWindow } from 'react-icons/bs';
+import { BsPencil } from 'react-icons/bs';
 import { MdTimeline } from 'react-icons/md';
 import { BsBook } from 'react-icons/bs';
 import NextLink from 'next/link';
@@ -106,6 +107,7 @@ const MenuLink = (props: MenuLinkProps) => {
     '/repos': <Icon as={BsBook} size={18} color={props.color} />,
     '/tech-stack': <Icon as={AiTwotoneThunderbolt} size={18} color={props.color} />,
     '/nftgallery': <Icon as={BsShopWindow} size={18} color={props.color} />,
+    '/guestbook': <Icon as={BsPencil} size={18} color={props.color} />,
     '/changelog': <Icon as={CgArrowsExchange} size={18} color={props.color} />
   };
 
