@@ -3,7 +3,6 @@ import {
   useColorModeValue,
   IconButtonProps,
 } from '@chakra-ui/react'
-import useSound from 'use-sound'
 import { AnimatePresence } from 'framer-motion'
 import { MotionBox } from '../shared/animations/motion'
 
