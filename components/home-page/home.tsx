@@ -201,7 +201,7 @@ const ContentBox = ({ linkColor }) => {
         fromcolor="blue.400"
         tocolor="red.500"
       >
-        New year, new content:
+        New content:
       </Text>
       <UnorderedList textAlign="left" paddingLeft={5} m={0}>
         {newContent.map((content, index) => (

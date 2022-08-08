@@ -152,7 +152,7 @@ export const skillsArray = [
 
 export const newContent = [
   {
-    link: '/articles/nftgulag',
+    link: '/articles/a-game-theoretic-approach-to-substantiating-nfts-3aac',
     text: 'NFT Gulag',
     showNewTag: true
   },
