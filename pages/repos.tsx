@@ -11,7 +11,6 @@ import { PageSlideFade } from 'components/shared/animations/page-transitions'
 import Header from 'components/shared/header'
 import { RiSignalTowerLine, RiWifiOffLine } from 'react-icons/ri'
 import LiveData from 'components/repos/live-data'
-import useSound from 'use-sound'
 import PageLayout from 'components/layouts/pageLayout'
 
 const TURQUOISE = '#06b6d4'
