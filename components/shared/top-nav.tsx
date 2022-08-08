@@ -46,8 +46,8 @@ const mobileLinks = [
 
 const dropdownLinks = [
   { name: 'Projects', path: '/projects' },
-  { name: 'Tech Stack', path: '/tech-stack' },
   { name: 'Repos', path: '/repos' },
+  { name: 'Tech Stack', path: '/tech-stack' },
   { name: 'NFT Gallery', path: '/nftgallery' },
   { name: 'Changelog', path: '/changelog' }
   // { name: "Developer Story", path: "/developer-story" }
