@@ -138,7 +138,7 @@ const Home: React.FC<BlogPostProps> = (props) => {
             </Box>{' '}
             and I&apos;m a{' '}
             <Box as="span" whiteSpace="nowrap">
-              Full Stack Developer
+              Full-Stack Developer
             </Box>{' '}
             living in{' '}
             <Box as="span" whiteSpace="nowrap">
@@ -146,8 +146,8 @@ const Home: React.FC<BlogPostProps> = (props) => {
             </Box>
           </Box>
           <Box as="h2" fontSize="2xl" fontWeight="400" mt={5} textAlign="left">
-            This is my developer portfolio, where I write about the things I&apos;m
-            working on and share what I&apos;ve learned. 😊
+            This is my developer portfolio -
+            feel free to take a look around.
           </Box>
         </MotionFlex>
       </Flex>
