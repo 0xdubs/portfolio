@@ -16,7 +16,7 @@
 
 ```sh
 git clone https://github.com/danielw1534/portfolio
-cd myPortfolio && yarn install
+cd portfolio && yarn install
 yarn dev
 ```
 
