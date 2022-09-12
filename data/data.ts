@@ -21,7 +21,7 @@ export const companies = [
     title: 'EOG Resources',
     alt: 'EOG image',
     role: 'Engineer/Data Scientist',
-    skills: ['python','machine-learning', 'scipy','promax', 'opencv', 'python'],
+    skills: ['python','machine-learning', 'scipy','promax', 'opencv'],
     period: '2019 - 2021',
     logo: '/assets/images/logos/eog.png',
     url:'https://www.eogresources.com'
