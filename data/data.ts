@@ -107,6 +107,13 @@ export const skillsArray = [
     image: '/assets/images/logos/mongodb.png'
   },
   {
+    name: 'Docker',
+    description: 'PaaS',
+    link: 'https://www.docker.com/',
+    type: 'paas',
+    image: '/assets/images/logos/docker.png'
+  },
+  {
     name: 'Mysql',
     description: 'Database',
     link: 'https://www.mysql.com/',
