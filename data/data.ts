@@ -1,10 +1,19 @@
 export const companies = [
   {
+    title: 'Royal',
+    alt: 'Royal image',
+    role: 'Software Engineer',
+    skills: ['web3', 'elixir','solidity','node','typescript','postgres', 'react', 'aws'],
+    period: '2023 - Present',
+    logo: '/assets/images/logos/royal.jpeg',
+    url: 'https://www.royal.io'
+  },
+  {
     title: 'Nutiliti Inc.',
     alt: 'Nutiliti image',
     role: 'Software Engineer',
     skills: ['typescript', 'javascript','node','docker','python','mongodb', 'react', 'azure'],
-    period: '2021 - Present',
+    period: '2021 - 2023',
     logo: '/assets/images/logos/nutiliti.jpeg',
     url: 'https://www.nutiliti.com'
   },
