@@ -42,14 +42,12 @@ const mobileLinks = [
   { name: 'Repos', path: '/repos' },
   { name: 'Posts', path: '/articles' },
   { name: 'Guestbook', path: '/guestbook' },
-  { name: 'NFT Gallery', path: '/nftgallery' },
   { name: 'Changelog', path: '/changelog' }
 ];
 
 const dropdownLinks = [
   { name: 'Repos', path: '/repos' },
   { name: 'Tech Stack', path: '/tech-stack' },
-  { name: 'NFT Gallery', path: '/nftgallery' },
   { name: 'Guestbook', path: '/guestbook' },
   { name: 'Changelog', path: '/changelog' }
   // { name: "Developer Story", path: "/developer-story" }
@@ -106,7 +104,6 @@ const MenuLink = (props: MenuLinkProps) => {
     '/projects': <Icon as={MdTimeline} size={18} color={props.color} />,
     '/repos': <Icon as={BsBook} size={18} color={props.color} />,
     '/tech-stack': <Icon as={AiTwotoneThunderbolt} size={18} color={props.color} />,
-    '/nftgallery': <Icon as={BsShopWindow} size={18} color={props.color} />,
     '/guestbook': <Icon as={BsPencil} size={18} color={props.color} />,
     '/changelog': <Icon as={CgArrowsExchange} size={18} color={props.color} />
   };
