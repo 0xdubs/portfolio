@@ -26,7 +26,7 @@ const LiveData = () => {
   }
 
   useEffect(() => {
-    get('/users/0xdubs/repos').then((res) => {
+    get('/users/danielw1534/repos').then((res) => {
       setRepos(
         res?.sort((a, b) => b.stargazers_count - a.stargazers_count).slice(0, 8)
       )
