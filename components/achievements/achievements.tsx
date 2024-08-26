@@ -98,7 +98,7 @@ const Achievements = () => {
               Collected 34k+ posts views and 1.5k+ total reactions on{' '}
               <ExternalLink
                 color={linkColor}
-                url="https://dev.to/danielw1534"
+                url="https://dev.to/0xdubs"
                 text={'Dev.to'}
                 target="_blank"
               />
@@ -108,7 +108,7 @@ const Achievements = () => {
               Framer-motion,{' '}
               <ExternalLink
                 color={linkColor}
-                url="https://github.com/danielw1534/portfolio"
+                url="https://github.com/0xdubs/portfolio"
                 text={'source on Github'}
                 target="_blank"
               />
@@ -126,7 +126,7 @@ const Achievements = () => {
               Published or contributed to{' '}
               <ExternalLink
                 color={linkColor}
-                url="https://github.com/danielw1534?tab=repositories"
+                url="https://github.com/0xdubs?tab=repositories"
                 text={'32 open-source repositories'}
                 target="_blank"
               />
@@ -135,7 +135,7 @@ const Achievements = () => {
               Collected 650+ post views and 15+ total reactions on{' '}
               <ExternalLink
                 color={linkColor}
-                url="https://dev.to/danielw1534"
+                url="https://dev.to/0xdubs"
                 text={'Dev.to'}
                 target="_blank"
               />
@@ -144,7 +144,7 @@ const Achievements = () => {
               Built my portfolio website with React and ChakraUI,{' '}
               <ExternalLink
                 color={linkColor}
-                url="https://github.com/danielw1534/portfolio"
+                url="https://github.com/0xdubs/portfolio"
                 text={'source on Github'}
                 target="_blank"
               />

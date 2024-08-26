@@ -4,7 +4,7 @@ export const projectsList = [
     imageLight: '/assets/images/projects/nftgulag.png',
     blurHash: 'L4ADc400P*Zi4Tu1y;Qo00pH#YXl',
     site: 'https://nftgulag.io',
-    gitHub: 'https://github.com/danielw1534/nftgulag',
+    gitHub: 'https://github.com/0xdubs/nftgulag',
     description:
       'NFT Gulag is a game-theoretic approach to substantiating NFTs. It allows people to wager on NFTs and win rewards determined by popular-vote.',
     techStack: ['Typescript','React','Solidity']

@@ -12,7 +12,7 @@ const siteConfig = {
     name: "Daniel Warren",
     accounts: [
       {
-        url: "https://github.com/danielw1534",
+        url: "https://github.com/0xdubs",
         label: "Github Account",
         type: "gray",
         icon: <FaGithub />
@@ -24,7 +24,7 @@ const siteConfig = {
         icon: <FaTwitter />
       },
       {
-        url: "https://dev.to/danielw1534",
+        url: "https://dev.to/0xdubs",
         label: "Dev Account",
         type: "gray",
         icon: <FaDev />
